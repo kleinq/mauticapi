@@ -5,7 +5,9 @@ MauticAPI
 This is work under construction
 ***************
 
-To user:
+To use:
+
+```python
 from mauticapi.mautic import MauticApi
 
 api = MauticApi(
@@ -15,3 +17,4 @@ api = MauticApi(
     **{"access_token":access_token, "access_token_secret":access_token_secret})
 
 api.create_lead(**dict_of_lead_data_using_mautic_lead_field_names)
+```
