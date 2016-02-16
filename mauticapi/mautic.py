@@ -68,6 +68,11 @@ class MauticApi(object):
         else:
             raise InvalidResponseCode("Lead not created.  Status Code: {0}".format(status_code))
 
+    def add_lead_to_campaign(self, campaign_id, lead_id):
+        self.endpoint = "campaigns/{0}/lead/add/{1}".format(campaign_id, lead_id)
+        status_code, response = self.post(**{})
+        
+
     def post(self, **kwargs):
         resp = self.session.post(self.base_url + self.endpoint, data=json.dumps(kwargs), headers={"Content-Type": "application/json"})
         return resp.status_code, resp.json()
